@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="MoRF avatars are created from short monocular videos and can be rendered in real-time (30+ FPS, 640x640px) on mobile devices">
+  <meta property="og:title" content="WordArt Designer: User-Driven Artistic Typography Synthesis using Large Language Models"/>
+  <meta property="og:description" content="WordArt Designer: User-Driven Artistic Typography Synthesis using Large Language Models"/>
+  <meta property="og:url" content="https://wordart.github.io"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1280"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="WordArt Designer: User-Driven Artistic Typography Synthesis using Large Language Models">
+  <meta name="twitter:description" content="MoRF avatars are created from short monocular videos and can be rendered in real-time (30+ FPS, 640x640px) on mobile devices">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <title>WordArt Designer: User-Driven Artistic Typography Synthesis using Large Language Models</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <img src="static/images/wordart_title_v2.png" alt="Method"/>
+            <h1 class="title is-1 publication-title"><a style="color:black;">WordArt Designer</a>: <a style="color:black;">User-Driven Artistic Typography Synthesis using Large Language Models</a> </h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <!-- <div class="author-portrait">
+                  <img class="img-fluid mb-3" src="static/images/avatar/hongsuk.png" alt="">
+                </div> -->
+                <a href="https://scholar.google.com.hk/citations?user=bjNZqGAAAAAJ&hl=en" target="_blank">Jun-Yan He<sup>1</sup><sup>*</sup></a></span>
+              <span class="author-block">
+                <!-- <div class="author-portrait">
+                  <img class="img-fluid mb-3" src="static/images/avatar/isaac.png" alt="">
+                </div> -->
+                <a href="https://scholar.google.com.hk/citations?user=uB2He2UAAAAJ&hl=en" target="_blank"> Zhi-Qi Cheng<sup>2</sup><sup>+</sup></a></span>
+              <span class="author-block">
+                <!-- <div class="author-portrait">
+                  <img class="img-fluid mb-3" src="static/images/avatar/selim.jpeg" alt="">
+                </div> -->
+                <a href="https://scholar.google.com.hk/citations?user=G08_5nYAAAAJ&hl=en" target="_blank"> Chenyang Li<sup>1</sup> </a></span>
+              <span class="author-block">
+                <!-- <div class="author-portrait">
+                  <img class="img-fluid mb-3" src="static/images/avatar/moritz.jpg" alt="">
+                </div> -->
+                <a href="" target="_blank"> Jingdong Sun<sup>2</sup></a></span>
+              <span class="author-block">
+                <!-- <div class="author-portrait">
+                  <img class="img-fluid mb-3" src="static/images/avatar/nikhil.jpeg" alt="">
+                </div> -->
+                <a href="https://scholar.google.com.hk/citations?user=LFNwNF4AAAAJ&hl=en" target="_blank">Wangmeng Xiang <sup>1</sup></a></span>
+              <span class="author-block">
+                <!-- <div class="author-portrait">
+                  <img class="img-fluid mb-3" src="static/images/avatar/volkan.jpg" alt="">
+                </div> -->
+                <a href="https://scholar.google.com/citations?user=wLTXeNwAAAAJ&hl=en" target="_blank"> Xianhui Lin<sup>1</sup></a></span>
+              
+              <span class="author-block">
+                <!-- <div class="author-portrait">
+                  <img class="img-fluid mb-3" src="static/images/avatar/volkan.jpg" alt="">
+                </div> -->
+                <a href="https://scholar.google.com/citations?user=2k54E5wAAAAJ&hl=en" target="_blank"> Xiaoyang Kang<sup>1</sup></a></span>
+              
+              <span class="author-block">
+                <!-- <div class="author-portrait">
+                  <img class="img-fluid mb-3" src="static/images/avatar/volkan.jpg" alt="">
+                </div> -->
+              <a href="" target="_blank"> Zengke Jin<sup>4</sup></a></span>
+              
+              <span class="author-block">
+                <!-- <div class="author-portrait">
+                  <img class="img-fluid mb-3" src="static/images/avatar/volkan.jpg" alt="">
+                </div> -->
+              <a href="" target="_blank"> Yusen Hu<sup>3</sup></a></span>
+
+              <span class="author-block">
+                <!-- <div class="author-portrait">
+                  <img class="img-fluid mb-3" src="static/images/avatar/volkan.jpg" alt="">
+                </div> -->
+              <a href="" target="_blank"> Bin Luo<sup>1</sup></a></span>
+              <span class="author-block">
+                <!-- <div class="author-portrait">
+                  <img class="img-fluid mb-3" src="static/images/avatar/volkan.jpg" alt="">
+                </div> -->
+              <a href="" target="_blank"> Yifeng Geng<sup>1</sup></a></span>
+              <span class="author-block">
+                <!-- <div class="author-portrait">
+                  <img class="img-fluid mb-3" src="static/images/avatar/volkan.jpg" alt="">
+                </div> -->
+              <a href="https://scholar.google.com/citations?user=M0Ei1zkAAAAJ&hl=en" target="_blank"> Xuansong Xie<sup>1</sup></a></span>
+              <span class="author-block">
+                <!-- <div class="author-portrait">
+                  <img class="img-fluid mb-3" src="static/images/avatar/volkan.jpg" alt="">
+                </div> -->
+                <a href="https://scholar.google.com/citations?user=64zxhRUAAAAJ&hl=en" target="_blank"> Jingren Zhou<sup>1</sup></a></span>
+            </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>*</sup>Project Lead, Alibaba Team</span>
+                  </div>
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>+</sup>Co-Lead, CMU/ICL/RCA Team</span>
+                  </div>
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>DAMO Academy Alibaba Group   <sup>2</sup>Carnegie Mellon University </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"> <sup>3</sup>Imperial College London   <sup>4</sup>Royal College of Art </span>
+                  </div>
+
+                  <!-- ArXiv Link -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2310.18332" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv page</span>
+                  </a>
+                  <span class="link-block">
+                    <a href="https://arxiv.org/pdf/2310.18332.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv pdf</span>
+                  </a>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://modelscope.cn/models/jyhe21/wordart_designer/summary" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <!-- <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span> -->
+                    <span>ModelScope</span>
+                  </a>
+
+                  <span class="link-block">
+                    <a href="https://modelscope.cn/studios/WordArt/WordArt/summary" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <!-- <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span> -->
+                    <span>DEMO</span>
+                  </a>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://modelscope.cn/models/jyhe21/wordart_designer/summary" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <!-- <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span> -->
+                    <span>Github</span>
+                  </a>
+
+                  <br><br>
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">
+                        <div class="author-portrait">
+                          <img src="static/images/animation/Vincent-van-Gogh-style-flower.gif" alt="">
+                        </div>
+                    </span>
+          
+                    <span class="author-block">
+                        <div class="author-portrait">
+                          <img src="static/images/animation/Vincent-van-Gogh-style-bamboo.gif" alt="">
+                      </div>
+                    </span>
+          
+                    <span class="author-block">
+                      <div class="author-portrait">
+                        <img src="static/images/animation/Vincent-van-Gogh-style-fish.gif" alt="">
+                      </div>
+                    </span>
+          
+                    <span class="author-block">
+                      <div class="author-portrait">
+                        <img src="static/images/animation/follower-landscape-spring.gif" alt="">
+                      </div>
+                    </span>
+          
+                    <span class="author-block">
+                      <div class="author-portrait">
+                        <img src="static/images/animation/follower2-landscape-spring.gif" alt="">
+                      </div>
+                    </span>
+          
+                    <span class="author-block">
+                      <div class="author-portrait">
+                        <img src="static/images/animation/vegetable-flower1.gif" alt="">
+                      </div>
+                    </span>
+          
+                    <span class="author-block">
+                      <div class="author-portrait">
+                        <img src="static/images/animation/vegetable-flower2.gif" alt="">
+                      </div>
+                    </span>
+          
+                    <span class="author-block">
+                      <div class="author-portrait">
+                        <img src="static/images/animation/vegetable-grass.gif" alt="">
+                      </div>
+                    </span>
+                    <span class="author-block">
+                      <div class="author-portrait">
+                        <img src="static/images/animation/various-landscape-spring-cloud.gif" alt="">
+                      </div>
+                    </span>
+          
+                  
+                  </div>
+          
+                
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- <video poster="" id="steve" autoplay controls muted loop playsinline height="100%"> -->
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-chair-t">
+        <center>
+          <video poster="" id="chair-t" controls muted loop playsinline width="80%" height="80%">
+            <source src="./static/videos/output_1.mp4"
+                    type="video/mp4">
+          </video>
+        </center>
+        </div>
+        <div class="item item-chair-tp">
+        <center>
+          <video poster="" id="chair-tp" controls muted loop playsinline width="80%" height="80%">
+            <source src="./static/videos/output_0.mp4"
+                    type="video/mp4">
+          </video>
+        </center>
+        </div>
+        <div class="item item-shiba">
+        <center>
+          <video poster="" id="shiba" controls muted loop playsinline width="80%" height="80%">
+            <source src="./static/videos/output_2.mp4"
+                    type="video/mp4">
+          </video>
+        </center>
+        </div>
+        <div class="item item-fullbody">
+        <center>
+          <video poster="" id="fullbody" controls muted loop playsinline width="80%" height="80%">
+            <source src="./static/videos/output_9.mp4"
+                    type="video/mp4">
+          </video>
+        </center>
+        </div>
+        <div class="item item-blueshirt">
+        <center>
+          <video poster="" id="blueshirt" controls muted loop playsinline width="80%" height="80%">
+            <source src="./static/videos/output_16.mp4"
+                    type="video/mp4">
+          </video>
+        </center>
+        </div>
+        <div class="item item-mask">
+        <center>
+          <video poster="" id="mask" controls muted loop playsinline width="80%" height="80%">
+            <source src="./static/videos/output_11.mp4"
+                    type="video/mp4">
+          </video>
+        </center>
+        </div>
+        <div class="item item-coffee">
+        <center>
+          <video poster="" id="coffee" controls muted loop playsinline width="80%" height="80%">
+            <source src="./static/videos/output_3.mp4"
+                    type="video/mp4">
+          </video>
+        </center>
+        </div>
+        <div class="item item-coffee">
+          <center>
+            <video poster="" id="coffee" controls muted loop playsinline width="80%" height="80%">
+              <source src="./static/videos/output_13.mp4"
+                      type="video/mp4">
+            </video>
+          </center>
+        </div>
+        <div class="item item-coffee">
+          <center>
+            <video poster="" id="coffee" controls muted loop playsinline width="80%" height="80%">
+              <source src="./static/videos/output_4.mp4"
+                      type="video/mp4">
+            </video>
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="hero teaser">
+  <div class="hero-body has-text-justified">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="container">
+          <div class="container">
+            This paper introduces WordArt Designer, a user-driven framework for artistic typography synthesis, relying on Large Language Models (LLM). The system incorporates four key modules: the LLM Engine, SemTypo, StyTypo, and TexTypo modules. 1) The LLM Engine, empowered by LLM (e.g. GPT-3.5-turbo), interprets user inputs and generates actionable prompts for the other modules, thereby transforming abstract concepts into tangible designs. 2) The SemTypo module optimizes font designs using semantic concepts, striking a balance between artistic transformation and readability. 3) Building on the semantic layout provided by the SemTypo module, the StyTypo module creates smooth, refined images. 4) The TexTypo module further enhances the design's aesthetics through texture rendering, enabling the generation of inventive textured fonts. Notably, WordArt Designer highlights the fusion of generative AI with artistic typography. 
+          <br>
+          <br>
+        </div>
+        <img src="static/images/dialog.png" alt="Method"/>
+          <br>
+          <br>
+        </div>
+        <div class="container">
+          Existing solutions mainly generate semantically coherent and visually pleasing typography within predefined concepts. These solutions often lack adaptability, creativity, and computational efficiency. To overcome these limitations, we introduce WordArt Designer, a system composed of three primary modules: the LLM Engine, SemTypo Module, and StyTypo Module, supplemented by the TexTypo Module for texture rendering.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="hero-body has-text-justified">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title has-text-centered">Framework Overview</h2>
+        <img src="static/images/framework.png" width=1024 alt="Method"/>
+        <div class="container">
+          This structure involves an LLM engine, the SemTypo module for Semantic Typography, the StyTypo module for Stylization Typography, and the TexTypo module for Texture Typography. These modules operate coherently, guided by a preset control flow, to facilitate a seamless and innovative transformation of text into artistic typography.
+          <br>
+          <br>
+        </div>
+        <img src="static/images/semtypo-flow.png" width=1024 alt="Method"/>
+        <div class="container">
+          The Semantic Typography (SemTypo) module alters typographies based on a given semantic concept. It unfolds in three stages: (1) Character Extraction and Parameterization, (2) Region Selection for Transformation, and (3) Semantic Transformation and Differentiable Rasterization.
+          <br>
+          <br>
+        </div>
+        <br>
+        <br>
+        <br>
+        <!-- <h2 class="title has-text-centered">Additional Videos</h2> -->
+
+        <!-- <div class="container">
+          <div class="subtitle has-text-centered">
+            <p id="centerText">Our Surface-Aware Masking algorithm or SAM</p>
+          </div>
+          <center>
+            <video poster="" id="video1" width="900" height="600" controls muted loop>
+              <source src="static/videos/SAM_muted.mp4" type="video/mp4">
+            </video>
+          </center>
+          Our Surface-Aware Masking (SAM) algorithm allows us to map unknown 3D areas into 2D accurately. This allows us to then inpaint more accurately which in turn lets us estimate the geometry and texture of the unknown objects in the scene. 
+        </div>
+        <br> -->
+        <!-- <br> -->
+        <!-- <div class="container">
+          <div class="subtitle has-text-centered">
+            <p id="centerText">Viewpoint Selection Method</p>
+          </div>
+          <center>
+            <video poster="" id="video2" width="900" height="600" controls muted loop>
+              <source src="static/videos/viewpoints_muted.mp4" type="video/mp4">
+            </video>
+          </center>
+          We search for viewpoints by traversing directions along a sphere around the scene away from the original viewpoint.  We look for viewpoints using our context ratio (context pixels / all pixels) and use the viewpoint that provides inpainting with enough context to work accurately but still provide new information.  We do this for many different directions, and then apply our constistency filtering to obtain our final output.
+        </div> -->
+        <!-- </div>
+        </div>
+        </section> -->
+        <!-- End image carousel -->
+        <br>
+        <br>
+        <h2 class="title has-text-centered">Qualitative & Quantitative Results</h2>
+
+        <div class="container">
+          We compare our method against 6 state of the art baselines qualitatively and quantitatively. Below are some examples of images generated from our method. For our full analysis please refer to our paper.
+          <br>
+          <br>
+        </div>
+        <img src="static/images/multilingual.png" alt="Method"/>
+        <img src="static/images/dataset-color.png" alt="Method"/>
+        <img src="static/images/dataset.png" alt="Method"/>
+        <div class="container">
+          Ablation study of the ranking model on the validation set. `p', `r', and `s' stand for precision, recall, and success rate, respectively. `x' in `TopX' indicates the number of stylized images retained. In the ranking-based method, `TopX' are selected based on ranking scores, while for the random-based method, `TopX' are selected randomly. Results of the random-based method are obtained by averaging over 10,000 iterations. Increased values are indicated in blue.
+          <br>
+          <br>
+        </div>
+        <img src="static/images/table.png" alt="Method"/>
+
+
+       
+
+        <br>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- Youtube video -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
+            <source src="static/videos/carousel1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%">
+            <source src="static/videos/carousel2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+            <source src="static/videos/carousel3.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+<!-- <br>
+<br>
+<br>
+<br>
+<h2 class="title has-text-centered">Qualitative Novel View Results</h2>
+
+<div class="container">
+  Our method also has the capability to produce realistic novel views of multiple objects. Using the Rotation + SAM + Inpaint parts of our method, we show qualitative results of our methods ability to generate novel views given an RGB-D image.
+  <br>
+  <br>
+</div>
+<img src="static/images/Inpainted_Qualitative.png" alt="Method"/>
+
+
+<br>
+<br>
+<br>
+<br> -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{he2023wordart,
+      title = {WordArt Designer: User-Driven Artistic Typography Synthesis using Large Language Models},
+      author = {Jun-Yan He Zhi-Qi Cheng Chenyang Li Jingdong Sun Wangmeng Xiang Xianhui Lin Xiaoyang Kang Zengke Jin Yusen Hu Bin Luo Yifeng Geng Xuansong Xie Jingren Zhou},
+      year={2023},
+      eprint={2312.09252},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+
+
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by-nc/3.0/88x31.png"/>
+            </a><br />This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0">Creative Commons Attribution-NonCommercial 4.0 International License</a> (CC-BY-NC).
+          </p>
+          <p>
+            This webpage is built with the template from <a
+                  href="https://github.com/nerfies/nerfies.github.io" target="_blank">NeRFies</a>. We sincerely thank <a href="https://keunhong.com/" target="_blank">Keunhong Park</a> for developing and open-sourcing this template.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
